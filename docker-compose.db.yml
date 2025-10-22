@@ -10,6 +10,8 @@ services:
     ports:
       # Bind only to localhost for security (matches deploy.sh)
       - "127.0.0.1:${DB_PORT:-5432}:5432"
+    environment:
+      - TZ=Asia/Ho_Chi_Minh
     volumes:
       # Use consistent volume name with deploy.sh
       - nginx-love-postgres-data:/var/lib/postgresql/data
